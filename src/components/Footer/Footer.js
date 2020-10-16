@@ -3,14 +3,17 @@ import logo from '../../logo.svg';
 
 import './footer.css';
 
-const Footer = () => (
+const Footer = ({
+  links: { elon_twitter: elonMask, flickr, twitter, website },
+  summary,
+}) => (
   <footer className='footer'>
     <img src={logo} alt='logo Space X' className='logo' />
     <nav className='footer-nav'>
       <ul className='list'>
         <li className='item'>
           <a
-            href='/'
+            href={elonMask}
             rel='noopener noreferrer'
             target='_blank'
             className='item-link'
@@ -20,7 +23,7 @@ const Footer = () => (
         </li>
         <li className='item'>
           <a
-            href='/'
+            href={twitter}
             rel='noopener noreferrer'
             target='_blank'
             className='item-link'
@@ -30,7 +33,7 @@ const Footer = () => (
         </li>
         <li className='item'>
           <a
-            href='/'
+            href={flickr}
             rel='noopener noreferrer'
             target='_blank'
             className='item-link'
@@ -40,7 +43,7 @@ const Footer = () => (
         </li>
         <li className='item'>
           <a
-            href='/'
+            href={website}
             rel='noopener noreferrer'
             target='_blank'
             className='item-link'
@@ -50,12 +53,7 @@ const Footer = () => (
         </li>
       </ul>
     </nav>
-    <p className='footer-text'>
-      For additional questions, contact
-      <a className='footer-link' href='mailto:rideshare@spacex.com'>
-        rideshare@spacex.com
-      </a>
-    </p>
+    <p className='footer-text'>{summary}</p>
   </footer>
 );
 
